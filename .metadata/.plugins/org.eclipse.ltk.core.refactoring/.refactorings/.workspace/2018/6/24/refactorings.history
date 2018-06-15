@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="リソース &apos;HelloWorld&apos; を削除" deleteContents="false" description="リソース &apos;HelloWorld&apos; を削除" element1="/HelloWorld" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1528965511730"/>&#x0A;<refactoring comment="リソース &apos;HelloWorld&apos; を削除" deleteContents="false" description="リソース &apos;HelloWorld&apos; を削除" element1="/HelloWorld" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1528965853771"/>
+</session>
