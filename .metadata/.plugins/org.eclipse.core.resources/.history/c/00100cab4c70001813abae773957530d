@@ -1,0 +1,22 @@
+/**
+ *
+ */
+
+/**
+ * @author internousdev
+ *
+ */
+public class Person2 {
+	public Person2(){
+
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+
+	}
+
+}
