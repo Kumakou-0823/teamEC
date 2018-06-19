@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * 
+ */
+
+/**
+ * @author internousdev
+ *
+ */
+public class List {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		List<String>list = new ArrayList<String>();
+		
+		//値の記憶はaddメゾットを利用
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add("4");
+		list.add("5");
+
+	}
+
+}

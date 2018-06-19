@@ -1,0 +1,50 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
+/**
+ *
+ */
+
+/**
+ * @author internousdev
+ *
+ */
+public class Test {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		TestUserDAO dao = new TestUserDAO();
+		dao.select("taro", "123");
+
+	}
+
+	public void selectAll(){
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+
+		String sql ="select * from test_table";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			ResultSet rs=ps.executeQuery();
+			while (rs.next()){
+				System.out.println(rs.getString("user_name"));
+				System.out.println(rs.getString("password"));
+			}
+			}catch(SQLException e){
+				e.printStackTrace();
+				}
+		try{
+			con.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
+
+}
