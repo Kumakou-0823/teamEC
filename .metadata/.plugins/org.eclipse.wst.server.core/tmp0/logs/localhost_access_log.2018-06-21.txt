@@ -44,3 +44,8 @@
 0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:22:18 +0900] "GET /WebProj2/ HTTP/1.1" 200 979
 0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:22:19 +0900] "POST /WebProj2/InquiryAction.action HTTP/1.1" 200 937
 0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:22:27 +0900] "POST /WebProj2/InquiryCompleteAction.action HTTP/1.1" 200 364
+127.0.0.1 - - [21/Jun/2018:17:58:34 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:58:37 +0900] "GET /WebProj2/ HTTP/1.1" 200 2070
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:58:44 +0900] "GET /WebProj2/TestAction.action?username=aaa&password= HTTP/1.1" 200 203
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:58:50 +0900] "POST /WebProj2/TestAction.action HTTP/1.1" 200 203
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:17:58:57 +0900] "GET /WebProj2/TestAction.action?username=aaa&password=sss HTTP/1.1" 200 203
