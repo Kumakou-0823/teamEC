@@ -21,3 +21,7 @@
 0:0:0:0:0:0:0:1 - - [22/Jun/2018:14:59:34 +0900] "GET /WebPro3/TestAction.action?username=kuma&password=1111 HTTP/1.1" 200 208
 0:0:0:0:0:0:0:1 - - [22/Jun/2018:14:59:48 +0900] "POST /WebPro3/TestAction.action HTTP/1.1" 200 208
 0:0:0:0:0:0:0:1 - - [22/Jun/2018:15:20:06 +0900] "GET /WebPro3/ HTTP/1.1" 200 2069
+127.0.0.1 - - [22/Jun/2018:17:09:27 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [22/Jun/2018:17:09:31 +0900] "GET /WebProj4/ HTTP/1.1" 200 459
+0:0:0:0:0:0:0:1 - - [22/Jun/2018:17:09:34 +0900] "POST /WebProj4/HelloStrutsAction.action;jsessionid=6C33CB22213E720CF5A33C2A0A5B2F62 HTTP/1.1" 200 642
+0:0:0:0:0:0:0:1 - - [22/Jun/2018:17:09:34 +0900] "GET /WebProj4/css/style.css HTTP/1.1" 200 1423
