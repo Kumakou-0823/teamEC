@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<s:property value="#session,loginDTOList.get(0).username" />さん、ようこそ！
+<s:property value="#session.loginDTOList.get(0).username" />さん、ようこそ！
 
 <br>
 <table>
@@ -22,9 +22,11 @@
 <tr>
 <s:iterator value="#session.loginDTOList">
 <td><s:property value="username" /></td>
+<td><s:property value="password" /></td>
+</s:iterator>
+<tr>
+</tbody>
+</table>
 
-/**P25から続き
-
-</tbody></table>
 </body>
 </html>
