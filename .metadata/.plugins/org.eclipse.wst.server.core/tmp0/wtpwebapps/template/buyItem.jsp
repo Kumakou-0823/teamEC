@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -15,7 +14,7 @@
 
 <style type="text/css">
 
-/* ========TAG LAYOUT======== */<title>Insert title here</title>
+/* ========TAG LAYOUT======== */
 
 body {
 margin:0;
@@ -48,9 +47,15 @@ background-color: black;
 }
 
 #main {
-width:100%;
-height:80px;
-background-color:black;
+width: 100%;
+height: 500px;
+text-align: center;
+}
+
+#footer {
+width: 100%;
+height: 80px;
+background-color: black;
 clear:both;
 }
 
@@ -87,7 +92,7 @@ clear:both;
 </td>
 
 <td>
-<s:property valur="session.buyItem_price" />
+<s:property value="session.buyItem_price" />
 <span>円</span>
 </td>
 </tr>
@@ -129,7 +134,7 @@ clear:both;
 </s:form>
 
 <div>
-<span>前画面に戻るには</span>
+<span>前画面に戻る場合は</span>
 <a href='<s:url action="HomeAction" />'>こちら</a>
 </div>
 
