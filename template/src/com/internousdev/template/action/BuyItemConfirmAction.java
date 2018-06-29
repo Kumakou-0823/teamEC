@@ -29,5 +29,4 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String,Object> session) {
 		this.session = session;
 	}
-//続きはECサイト初級5時間目の21ページ{buyItemComplete.jspの作成}から
 }
