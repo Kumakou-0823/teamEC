@@ -47,29 +47,8 @@
 <result name="error">buyItem.jsp</result>
 </action>
 
-<!-- BuyItemConfirmAction -->
-<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
-<result name="success">buyItemComplete.jsp</result>
-<result name="back">buyItem.jsp</result>
-</action>
 
-<!-- BuyItemCompleteAction -->
-<action name="BuyItemCompleteAction" class="com.internousdev.ecsite.action.BuyItemCompleteAction" method="execute">
-<result name="success">home.jsp</result>
-</action>
 
-<!-- MyPageAction -->
-<action name="MyPageAction" class="com.internousdev.ecsite.action.MyPageAction" method="execute">
-<result name="success">myPage.jsp</result>
-<result name="error">error.jsp</result>
-</action>
-
-<!-- LogoutAction -->
-<action name="LogoutAction" class="com.internousdev.ecsite.action.LogoutAction" method="execute">
-<result name="success">home.jsp</result>
-</action>
-
-//ECサイト中級3時間目44ページ{GoHomeAction.java}から
 
 </package>
 
