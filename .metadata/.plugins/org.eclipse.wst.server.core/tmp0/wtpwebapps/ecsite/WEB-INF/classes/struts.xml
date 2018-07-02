@@ -47,7 +47,11 @@
 <result name="error">buyItem.jsp</result>
 </action>
 
-
+<!-- BuyItemConfirmAction -->
+<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
+<result name="success">buyItemComplete.jsp</result>
+<result name="back">buyItem.jsp</result>
+</action>
 
 
 </package>
