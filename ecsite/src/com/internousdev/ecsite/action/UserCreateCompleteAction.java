@@ -26,7 +26,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		return result;
 	}
 
-	public String getLoginUsserId() {
+	public String getLoginUserId() {
 		return loginUserId;
 	}
 
