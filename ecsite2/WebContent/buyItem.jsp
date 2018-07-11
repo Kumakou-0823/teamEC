@@ -55,6 +55,10 @@ background-color:#0174DF;
 clear:both;
 }
 
+#space {
+margin-bottom:30px;
+}
+
 </style>
 
 </head>
@@ -67,6 +71,8 @@ clear:both;
 
 <div id="main">
 <div id="top">
+
+
 <p>商品一覧</p>
 </div>
 
@@ -74,6 +80,7 @@ clear:both;
 <s:form action="BuyItemAction">
 
 <table>
+
 <tr>
 <td>
 <span>商品名</span>
@@ -116,6 +123,7 @@ clear:both;
 </td>
 </tr>
 
+
 <tr>
 <td>
 <span>支払い方法</span>
@@ -126,6 +134,9 @@ clear:both;
 <input type="radio" name="pay" value="2">クレジットカード支払い
 </td>
 </tr>
+
+
+
 
 <tr>
 <td>

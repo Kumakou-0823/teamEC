@@ -1,8 +1,0 @@
-package com.internousdev.template.action;
-
-import java.sql.SQLException;
-import java.util
-
-public class UserCreateCompleteAction {
-
-}

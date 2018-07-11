@@ -40,10 +40,7 @@ insert_date datetime,
 delete_date datetime
 );
 
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("鉛筆",50,50);
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("消しゴム",100,200);
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("ノート",150,40);
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("シャープペン",200,50);
+
 INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("三色ボールペン",250,30);
 
 INSERT INTO login_user_transaction(login_id,login_pass,user_name) VALUES("kumakou","kk52146224","test");

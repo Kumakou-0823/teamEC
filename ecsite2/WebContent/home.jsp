@@ -31,7 +31,7 @@ margin:0 auto;
 }
 
 #top {
-width: 100%;
+width: 60%;
 margin:30px auto;
 border:1px solid #333;
 }

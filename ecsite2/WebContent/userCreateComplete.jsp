@@ -31,7 +31,7 @@ table {
 }
 
 #top {
-	width:100%;
+	width:60%;
 	margin:30px auto;
 	border:1px solid #333;
 }
@@ -57,11 +57,32 @@ table {
 
 </style>
 
-<!-- ECサイト中級4時間目p41から -->
-
-
 </head>
 <body>
+
+<div id="header">
+	<div id="pr">
+	</div>
+</div>
+
+<div id="main">
+	<div id="top">
+		<p>新規ユーザー登録完了</p>
+	</div>
+
+	<div>
+		<h3>ユーザーの登録が完了致しました。</h3>
+
+		<div>
+			<a href='<s:url action="HomeAction" />'>ログインへ</a>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+	<div id="pr">
+	</div>
+</div>
 
 </body>
 </html>
