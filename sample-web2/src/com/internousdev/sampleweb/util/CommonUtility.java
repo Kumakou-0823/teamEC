@@ -13,6 +13,8 @@ public class CommonUtility {
 		}
 		return value;
 	}
+	//ゲストでログインする前の設定
+	//ランダム
 
 	public String[] parseArrayList(String s) {
 		return s.split(",",0);
@@ -31,5 +33,7 @@ public class CommonUtility {
 		}
 		return devidedList;
 	}
+	//ページの表示設定に関するメゾット
+	//グーグルの下
 
 }
