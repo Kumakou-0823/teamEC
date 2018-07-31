@@ -11,10 +11,10 @@ import com.internousdev.sampleweb.dto.MCategoryDTO;
 import com.internousdev.sampleweb.dto.UserInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class MyPageAction extends ActionSupport implements SessionAware {
+public class MyPageAction extends ActionSupport implements SessionAware{
 	private String categoryId;
 	private String keywords;
-	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 
 	private Map<String, Object> session;
 	public String execute() {
@@ -37,29 +37,43 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 		return result;
 	}
 
-	public List<MCategoryDTO> getmCategoryDTOList() {
-		return mCategoryDTOList;
+
+
+	public List<MCategoryDTO> getmCategoryDtoList() {
+		return mCategoryDtoList;
 	}
 
-	public void setmCategoryDTOList(List<MCategoryDTO> mCategoryDTOList) {
-		this.mCategoryDTOList = mCategoryDTOList;
+
+
+	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
+		this.mCategoryDtoList = mCategoryDtoList;
 	}
+
+
 
 	public String getCategoryId() {
 		return categoryId;
 	}
 
+
+
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
+
+
 
 	public String getKeywords() {
 		return keywords;
 	}
 
+
+
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
 	}
+
+
 
 	public Map<String, Object> getSession() {
 		return session;

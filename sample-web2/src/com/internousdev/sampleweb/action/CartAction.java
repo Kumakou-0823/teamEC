@@ -16,34 +16,33 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CartAction extends ActionSupport implements SessionAware{
 	private String categoryId;
 	private String keywords;
-	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 	private Map<String, Object> session;
-
 	public String execute() {
 		String result = ERROR;
 		String userId = null;
-		CartInfoDAO cartInfoDAO = new CartInfoDAO();
-		List<CartInfoDTO> cartInfoDTOList = new ArrayList<CartInfoDTO>();
+		CartInfoDAO cartInfoDao = new CartInfoDAO();
+		List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
 		if(session.containsKey("loginId")) {
 			userId = String.valueOf(session.get("loginId"));
-		} else if (session.containsKey("tempUserId")) {
+		}else if (session.containsKey("tempUserId")) {
 			userId = String.valueOf(session.get("tempUserId"));
 		}
-		cartInfoDTOList = cartInfoDAO.getCartInfoDTOList(userId);
-		Iterator<CartInfoDTO> iterator = cartInfoDTOList.iterator();
+		cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
+		Iterator<CartInfoDTO> iterator = cartInfoDtoList.iterator();
 		if(!(iterator.hasNext())) {
-			cartInfoDTOList = null;
+			cartInfoDtoList = null;
 		}
-		session.put("cartInfoDTOList", cartInfoDTOList);
+		session.put("cartInfoDtoList", cartInfoDtoList);
 
-		int totalPrice = Integer.parseInt(String.valueOf(cartInfoDAO.getTotalPrice(userId)));
+		int totalPrice = Integer.parseInt(String.valueOf(cartInfoDao.getTotalPrice(userId)));
 		session.put("totalPrice", totalPrice);
 		result = SUCCESS;
 
 		if(!session.containsKey("mCategoryList")) {
-			MCategoryDAO mCategoryDAO = new MCategoryDAO();
-			mCategoryDTOList = mCategoryDAO.getMCategoryList();
-			session.put("mCategoryDTOList", mCategoryDTOList);
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
 		return result;
 	}
@@ -67,9 +66,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }

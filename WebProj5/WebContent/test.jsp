@@ -27,6 +27,10 @@
 </tr>
 </s:iterator>
 
+<s:form id="form" action="WelcomeAction">
+<s:submit value="ログインへ" />
+</s:form>
+
 </tbody>
 </table>
 

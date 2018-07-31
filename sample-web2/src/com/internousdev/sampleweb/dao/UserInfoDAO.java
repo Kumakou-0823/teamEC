@@ -9,11 +9,14 @@ import com.internousdev.sampleweb.dto.UserInfoDTO;
 import com.internousdev.sampleweb.util.DBConnector;
 
 public class UserInfoDAO {
-	public int createUser(String familyName, String firstName,String familyNameKana,String firstNameKana,String sex, String email,String loginId,String password) {
+	public int createUser(String familyName, String firstName, String familyNameKana,
+			String firstNameKana, String sex, String email, String loginId, String password) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		int count = 0;
-		String sql = "insert into user_info(user_id, password, family_name, first_name, family_name_kana, first_name_kana, sex, email, status, loginId, regist_date, update_date,values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), 0)";
+		String sql = "insert into user_info(user_id, password, family_name, first_name, family_name_kana,"
+				+ " first_name_kana, sex, email, status, logined, regist_date, update_date)"
+				+ " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), 0)";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, loginId);
@@ -21,7 +24,7 @@ public class UserInfoDAO {
 			preparedStatement.setString(3, familyName);
 			preparedStatement.setString(4, firstName);
 			preparedStatement.setString(5, familyNameKana);
-			preparedStatement.setString(6,firstNameKana);
+			preparedStatement.setString(6, firstNameKana);
 			preparedStatement.setString(7, sex);
 			preparedStatement.setString(8, email);
 			preparedStatement.setInt(9, 0);
@@ -81,11 +84,10 @@ public class UserInfoDAO {
 				userInfoDTO.setFamilyName(resultSet.getString("family_name"));
 				userInfoDTO.setFirstName(resultSet.getString("first_name"));
 				userInfoDTO.setFamilyNameKana(resultSet.getString("family_name_kana"));
-				userInfoDTO.setFirstNameKana(resultSet.getString("first_name_kana"));
 				userInfoDTO.setSex(resultSet.getInt("sex"));
 				userInfoDTO.setEmail(resultSet.getString("email"));
 				userInfoDTO.setStatus(resultSet.getString("status"));
-				userInfoDTO.setLoginId(resultSet.getInt("loginid"));
+				userInfoDTO.setLogined(resultSet.getInt("status"));
 				userInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
 				userInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
 			}
@@ -120,7 +122,7 @@ public class UserInfoDAO {
 				userInfoDTO.setSex(resultSet.getInt("sex"));
 				userInfoDTO.setEmail(resultSet.getString("email"));
 				userInfoDTO.setStatus(resultSet.getString("status"));
-				userInfoDTO.setLoginId(resultSet.getInt("loginid"));
+				userInfoDTO.setLogined(resultSet.getInt("logined"));
 				userInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
 				userInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
 			}
@@ -159,8 +161,8 @@ public class UserInfoDAO {
 	public int login(String loginId, String password) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		int result = 0;
-		String sql = "update user_info set loginid=1 where user_id=? and password=?";
+		int result=0;
+		String sql = "update user_info set logined=1 where user_id=? and password=?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, loginId);
@@ -180,11 +182,11 @@ public class UserInfoDAO {
 	public int logout(String loginId) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		int result = 0;
-		String sql = "update user_info set login=0 where user_id=?";
+		int result=0;
+		String sql = "update user_info set logined=0 where user_id=?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1,loginId);
+			preparedStatement.setString(1, loginId);
 			result = preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -205,8 +207,7 @@ public class UserInfoDAO {
 		}
 		StringBuilder stringBuilder = new StringBuilder("****************");
 
-		String concealPassword = stringBuilder.replace(beginIndex,endIndex,password.substring(beginIndex,endIndex)).toString();
+		String concealPassword = stringBuilder.replace(beginIndex, endIndex, password.substring(beginIndex,endIndex)).toString();
 		return concealPassword;
 	}
-
 }

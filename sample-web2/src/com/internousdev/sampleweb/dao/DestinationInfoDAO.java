@@ -12,12 +12,13 @@ import com.internousdev.sampleweb.util.DBConnector;
 
 public class DestinationInfoDAO {
 
-	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana, String email, String telNumber, String userAddress) {
+	public int insert(String userId, String familyName, String firstName, String familyNameKana, String firstNameKana,
+		String email, String telNumber, String userAddress) {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		int count = 0;
-		String sql = "insert into destination_info(user_id, family_name, first_name, family_name_kana, first_name_kana, email, tel_number, user_address, regist_date, update_date values (?, ?, ?, ?, ?, ?, ?, ?, now(), '0000-01-01')";
-
+		String sql = "insert into destination_info(user_id, family_name, first_name, family_name_kana, first_name_kana, email, tel_number, user_address, regist_date, update_date)"
+				+ " values (?, ?, ?, ?, ?, ?, ?, ?, now(), '0000-01-01')";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, userId);
@@ -40,10 +41,10 @@ public class DestinationInfoDAO {
 		return count;
 	}
 
-	public List<DestinationInfoDTO> getDestinationInfo(String loginId) throws SQLException {
+	public List<DestinationInfoDTO> getDestinationInfo(String loginId) throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
+		List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
 
 		String sql = "SELECT id, family_name, first_name, family_name_kana, first_name_kana, user_address, tel_number, email FROM destination_info WHERE user_id = ?";
 
@@ -63,14 +64,13 @@ public class DestinationInfoDAO {
 				destinationInfoDTO.setUserAddress(rs.getString("user_address"));
 				destinationInfoDTO.setEmail(rs.getString("email"));
 				destinationInfoDTO.setTelNumber(rs.getString("tel_number"));
-				destinationInfoDTOList.add(destinationInfoDTO);
+				destinationInfoDtoList.add(destinationInfoDTO);
 			}
-		} catch (SQLException e) {
+		}catch(SQLException e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			connection.close();
 		}
-		return destinationInfoDTOList;
+		return destinationInfoDtoList;
 	}
-
 }

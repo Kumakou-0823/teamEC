@@ -17,12 +17,23 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.wst.xml.ui.internal.wizards.NewXMLWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.wst.css.ui.internal.wizard.NewCSSWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
-			<item value="org.eclipse.wst.XMLCategory"/>
-			<item value="org.eclipse.jpt.dbws"/>
-			<item value="org.eclipse.ui.Examples"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
+		<item value="0" key="sort"/>
+		<item value="false" key="allPersp"/>
+		<list key="columns">
+			<item value="286"/>
+			<item value="573"/>
+		</list>
+		<list key="bounds">
+			<item value="333"/>
+			<item value="10"/>
+			<item value="934"/>
+			<item value="630"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">

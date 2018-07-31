@@ -14,4 +14,13 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.internousdev.sampleweb.dto.PaginationDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.sampleweb.util.Pagination"/>
+<fullyQualifiedTypeName name="org.apache.struts2.RequestUtils"/>
+<fullyQualifiedTypeName name="webApplication27.Control"/>
+<fullyQualifiedTypeName name="webApplication27.UserAuthBean"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
+<fullyQualifiedTypeName name="javax.swing.ScrollPaneConstants"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

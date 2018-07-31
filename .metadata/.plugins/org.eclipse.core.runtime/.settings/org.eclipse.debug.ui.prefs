@@ -5,4 +5,5 @@ org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UT
 org.eclipse.debug.ui.UseContextualLaunch=false
 org.eclipse.debug.ui.cancel_launch_with_compile_errors=always
 org.eclipse.debug.ui.save_dirty_editors_before_launch=never
+preferredDetailPanes=DefaultDetailPane\:DefaultDetailPane|
 preferredTargets=default\:default|

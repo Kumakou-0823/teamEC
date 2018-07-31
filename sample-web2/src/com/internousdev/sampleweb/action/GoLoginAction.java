@@ -11,16 +11,14 @@ import com.internousdev.sampleweb.dto.MCategoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GoLoginAction extends ActionSupport implements SessionAware{
-
 	private String categoryId;
-	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 	private Map<String, Object> session;
-
 	public String execute() {
 		if(!session.containsKey("mCategoryList")) {
-			MCategoryDAO mCategoryDAO = new MCategoryDAO();
-			mCategoryDTOList = mCategoryDAO.getMCategoryList();
-			session.put("mCategoryDTOList", mCategoryDTOList);
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
 		session.put("loginIdErrorMessageList", "");
 		session.put("passwordErrorMessageList", "");
@@ -35,20 +33,18 @@ public class GoLoginAction extends ActionSupport implements SessionAware{
 		this.categoryId = categoryId;
 	}
 
-	public List<MCategoryDTO> getmCategoryDTOList() {
-		return mCategoryDTOList;
+	public List<MCategoryDTO> getmCategoryDtoList() {
+		return mCategoryDtoList;
 	}
 
-	public void setmCategoryDTOList(List<MCategoryDTO> mCategoryDTOList) {
-		this.mCategoryDTOList = mCategoryDTOList;
+	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
+		this.mCategoryDtoList = mCategoryDtoList;
 	}
 
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }

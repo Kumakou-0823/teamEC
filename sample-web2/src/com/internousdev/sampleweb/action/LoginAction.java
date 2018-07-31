@@ -24,7 +24,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String password;
 	private boolean savedLoginId;
 
-	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 
 	private List<String> loginIdErrorMessageList = new ArrayList<String>();
 	private List<String> passwordErrorMessageList = new ArrayList<String>();
@@ -37,9 +37,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(savedLoginId==true) {
 			session.put("savedLoginId", true);
 			session.put("loginId", loginId);
-		} else {
-			session.put("saveLoginId", false);
-			session.put("loginId", loginId);
+		}else {
+			session.put("savedLoginId", false);
+			session.remove("loginId", loginId);
 		}
 
 		InputChecker inputChecker = new InputChecker();
@@ -50,43 +50,43 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		&& passwordErrorMessageList.size()!=0) {
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
-			session.put("loginid", 0);
+			session.put("logined", 0);
 		}
 
 		if(!session.containsKey("mCategoryList")) {
-			MCategoryDAO mCategoryDAO = new MCategoryDAO();
-			mCategoryDTOList = mCategoryDAO.getMCategoryList();
-			session.put("mCategoryDTOList", mCategoryDTOList);
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
 
-		UserInfoDAO userInfoDAO = new UserInfoDAO();
-		if(userInfoDAO.isExistsUserInfo(loginId, password)) {
-			if(userInfoDAO.login(loginId, password) > 0) {
-				UserInfoDTO userInfoDTO = userInfoDAO.getUserInfo(loginId, password);
+		UserInfoDAO userInfoDao = new UserInfoDAO();
+		if(userInfoDao.isExistsUserInfo(loginId, password)) {
+			if(userInfoDao.login(loginId, password) > 0) {
+				UserInfoDTO userInfoDTO = userInfoDao.getUserInfo(loginId, password);
 				session.put("loginId", userInfoDTO.getUserId());
-				int count = 0;
-				CartInfoDAO cartInfoDAO = new CartInfoDAO();
+				int count=0;
+				CartInfoDAO cartInfoDao = new CartInfoDAO();
 
-				count = cartInfoDAO.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
+				count = cartInfoDao.linkToLoginId(String.valueOf(session.get("tempUserId")),loginId);
 				if(count > 0) {
-					DestinationInfoDAO destinationInfoDAO = new DestinationInfoDAO();
+					DestinationInfoDAO destinationInfoDao = new DestinationInfoDAO();
 					try {
-						List<DestinationInfoDTO> destinationInfoDTOList = new ArrayList<DestinationInfoDTO>();
-						destinationInfoDTOList = destinationInfoDAO.getDestinationInfo(loginId);
-						Iterator<DestinationInfoDTO> iterator = destinationInfoDTOList.iterator();
+						List<DestinationInfoDTO> destinationInfoDtoList = new ArrayList<DestinationInfoDTO>();
+						destinationInfoDtoList = destinationInfoDao.getDestinationInfo(loginId);
+						Iterator<DestinationInfoDTO> iterator = destinationInfoDtoList.iterator();
 						if(!(iterator.hasNext())) {
-							destinationInfoDTOList = null;
+							destinationInfoDtoList = null;
 						}
-						session.put("destinationInfoDTOList", destinationInfoDTOList);
+						session.put("destinationInfoDtoList", destinationInfoDtoList);
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
 					result = "settlement";
-				} else {
+				}else {
 					result = SUCCESS;
 				}
 			}
-				session.put("loginid", 1);
+				session.put("logined", 1);
 		}
 		return result;
 	}
@@ -102,18 +102,16 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public String getLoginId() {
 		return loginId;
 	}
-
 	public void setLoginId(String loginId) {
 		this.loginId = loginId;
 	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 
 	public boolean isSavedLoginId() {
 		return savedLoginId;
@@ -126,26 +124,20 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public List<String> getLoginIdErrorMessageList() {
 		return loginIdErrorMessageList;
 	}
-
 	public void setLoginIdErrorMessageList(List<String> loginIdErrorMessageList) {
 		this.loginIdErrorMessageList = loginIdErrorMessageList;
 	}
-
 	public List<String> getPasswordErrorMessageList() {
 		return passwordErrorMessageList;
 	}
-
 	public void setPasswordErrorMessageList(List<String> passwordErrorMessageList) {
 		this.passwordErrorMessageList = passwordErrorMessageList;
 	}
-
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 
 }

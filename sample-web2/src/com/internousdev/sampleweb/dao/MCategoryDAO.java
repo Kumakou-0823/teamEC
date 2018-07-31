@@ -12,10 +12,10 @@ import com.internousdev.sampleweb.dto.MCategoryDTO;
 import com.internousdev.sampleweb.util.DBConnector;
 
 public class MCategoryDAO {
-	public List<MCategoryDTO> getMCategoryList() {
+	public List<MCategoryDTO> getMCategoryList(){
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		List<MCategoryDTO> mCategoryDTOList = new ArrayList<MCategoryDTO>();
+		List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 		String sql = "select * from m_category";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -28,11 +28,11 @@ public class MCategoryDAO {
 				mCategoryDTO.setCategoryDescription(resultSet.getString("category_description"));
 				mCategoryDTO.setInsertDate(resultSet.getDate("insert_date"));
 				mCategoryDTO.setUpdateDate(resultSet.getDate("update_date"));
-				mCategoryDTOList.add(mCategoryDTO);
+				mCategoryDtoList.add(mCategoryDTO);
 			}
-			Iterator<MCategoryDTO> iterator = mCategoryDTOList.iterator();
+			Iterator<MCategoryDTO> iterator = mCategoryDtoList.iterator();
 			if(!(iterator.hasNext())) {
-				mCategoryDTOList = null;
+				mCategoryDtoList = null;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class MCategoryDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return mCategoryDTOList;
+		return mCategoryDtoList;
 	}
-
 }
+

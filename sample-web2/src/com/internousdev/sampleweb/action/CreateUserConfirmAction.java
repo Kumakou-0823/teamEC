@@ -9,6 +9,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.sampleweb.util.InputChecker;
 import com.opensymphony.xwork2.ActionSupport;
 
+
 public class CreateUserConfirmAction extends ActionSupport implements SessionAware{
 
 	private String familyName;
@@ -44,14 +45,13 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		session.put("email", email);
 		session.put("loginId", loginId);
 
-		familyNameErrorMessageList = inputChecker.doCheck("姓", familyName, 1, 16, true, true, true, false, false, false,false);
+		familyNameErrorMessageList = inputChecker.doCheck("姓", familyName, 1, 16, true, true, true, false, false, false, false);
 		firstNameErrorMessageList = inputChecker.doCheck("名", firstName, 1, 16, true, true, true, false, false, false, false);
-		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな", familyNameKana,1, 16, false, false, true, false, false, false, false);
+		familyNameKanaErrorMessageList = inputChecker.doCheck("姓ふりがな", familyNameKana, 1, 16, false, false, true, false, false, false, false);
 		firstNameKanaErrorMessageList = inputChecker.doCheck("名ふりがな", firstNameKana, 1, 16, false, false, true, false, false, false, false);
 		emailErrorMessageList = inputChecker.doCheck("メールアドレス", email, 14, 32, true, false, false, true, true, false, false);
 		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
 		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
-
 
 		if(familyNameErrorMessageList.size()==0
 		&& firstNameErrorMessageList.size()==0
@@ -61,12 +61,12 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		&& loginIdErrorMessageList.size()==0
 		&& passwordErrorMessageList.size()==0) {
 			result = SUCCESS;
-		} else {
+		}else {
 			session.put("familyNameErrorMessageList", familyNameErrorMessageList);
 			session.put("firstNameErrorMessageList", firstNameErrorMessageList);
 			session.put("familyNameKanaErrorMessageList", familyNameKanaErrorMessageList);
 			session.put("firstNameKanaErrorMessageList", firstNameKanaErrorMessageList);
-			session.put("emailErrorMessageList",emailErrorMessageList );
+			session.put("emailErrorMessageList", emailErrorMessageList);
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
 			session.put("passwordErrorMessageList", passwordErrorMessageList);
 			result = ERROR;
@@ -130,7 +130,7 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.sex = sex;
 	}
 
-// 	public List<String> getSexList() {
+//	public List<String> getSexList() {
 //		return sexList;
 //	}
 //
@@ -222,10 +222,8 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		return session;
 	}
 
-
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }

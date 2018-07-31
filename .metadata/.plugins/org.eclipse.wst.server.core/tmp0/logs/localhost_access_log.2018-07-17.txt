@@ -1,0 +1,8 @@
+127.0.0.1 - - [17/Jul/2018:14:54:18 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:14:54:28 +0900] "GET /sample-web/productList.jsp HTTP/1.1" 200 2419
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:14:54:28 +0900] "GET /sample-web/css/style.css HTTP/1.1" 200 8746
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:14:54:28 +0900] "GET /sample-web/js/smoothscroll.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:14:58:08 +0900] "GET /sample-web/productDetails.jsp HTTP/1.1" 500 245
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:14:58:24 +0900] "GET /sample-web/productDetails.jsp HTTP/1.1" 500 245
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:15:05:58 +0900] "GET /sample-web/productDetails.jsp HTTP/1.1" 500 245
+0:0:0:0:0:0:0:1 - - [17/Jul/2018:15:09:26 +0900] "GET /sample-web/productDetails.jsp HTTP/1.1" 500 245
