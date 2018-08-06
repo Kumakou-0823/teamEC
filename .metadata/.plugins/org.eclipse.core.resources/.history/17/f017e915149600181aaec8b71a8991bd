@@ -1,0 +1,5 @@
+package com.internousdev.tabicale.util;
+
+public class DBConnector {
+
+}
