@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/style.css">
 <meta http-equiv="refresh" content="0;URL='HomeAction'"/>
-<title>sample-web</title>
+<title>sample-web2</title>
 </head>
 <body>
 <div id="footer">

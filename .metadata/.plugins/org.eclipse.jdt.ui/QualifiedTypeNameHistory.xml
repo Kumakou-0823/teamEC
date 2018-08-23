@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.internousdev.sampleweb.dto.PaginationDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.sampleweb.util.Pagination"/>
 <fullyQualifiedTypeName name="org.apache.struts2.RequestUtils"/>
 <fullyQualifiedTypeName name="webApplication27.Control"/>
 <fullyQualifiedTypeName name="webApplication27.UserAuthBean"/>
@@ -26,4 +25,5 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.internousdev.sampleweb.util.Pagination"/>
 </qualifiedTypeNameHistroy>
