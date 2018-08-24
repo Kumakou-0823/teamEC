@@ -1,0 +1,5 @@
+package com.internousdev.mytabicale.action;
+
+public class CreateDestinationComfirmAction {
+
+}
