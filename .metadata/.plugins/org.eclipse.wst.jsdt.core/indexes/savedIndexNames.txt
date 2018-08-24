@@ -1,9 +1,5 @@
 INDEX VERSION 1.3+C:\Users\internousdev\Desktop\workspace\workspace-kumagai\teamEC\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-892125280.index
 1866724841.index
 3947258479.index
-542557176.index
-3082098993.index
-846446457.index
-324802774.index
+892125280.index
 568930193.index
